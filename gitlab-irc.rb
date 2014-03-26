@@ -3,9 +3,9 @@ require 'sinatra'
 require 'json'
 
 # IRC Config
-IRC_HOST = 'sausage.startsiden.no'
+IRC_HOST = 'irc.yourircserver.com'
 IRC_PORT = 6667
-IRC_CHANNEL = '#drift'
+IRC_CHANNEL = '#yourchan'
 IRC_NICK = 'GitLabBot'
 IRC_REALNAME = 'GitLabBot'
 
