@@ -3,9 +3,9 @@ require 'sinatra'
 require 'json'
 
 # IRC Config
-IRC_HOST = 'irc.freenode.org'
+IRC_HOST = 'sausage.startsiden.no'
 IRC_PORT = 6667
-IRC_CHANNEL = '#yourchannel'
+IRC_CHANNEL = '#drift'
 IRC_NICK = 'GitLabBot'
 IRC_REALNAME = 'GitLabBot'
 
@@ -19,10 +19,10 @@ post '/commit' do
 
     json = JSON.parse(request.env["rack.input"].read)
 
-    socket.puts "PRIVMSG #{IRC_CHANNEL} :New Commits for '" + json['repository']['name'] + "'"
+#    socket.puts "PRIVMSG #{IRC_CHANNEL} :New Commits for '" + json['repository']['name'] + "'"
 
     json['commits'].each do |commit|
-      socket.puts "PRIVMSG #{IRC_CHANNEL} :by #{commit['author']['name']} | #{commit['message']} | #{commit['url']}"
+      socket.puts "PRIVMSG #{IRC_CHANNEL} :\x039" + json['repository']['name'] + "\x03 | by #{commit['author']['name']} | #{commit['message']} | #{commit['url']}"
     end
 
     puts socket.gets
