@@ -2,9 +2,7 @@
 
 Tiny Sinatra App that takes POST Calls from Gitlab Web Hooks and pushes them in your IRC Channel of choice.
 
-    22:59 < GitLabBot> New Commits for 'repo-name'
-    22:59 < GitLabBot> by Aleks | Got shit done | http://yourgitlabhost.com/repo-name/commits/f9cbbe01c....
-    22:59 < GitLabBot> by Aleks | Got even more shit done | http://yourgitlabhost.com/repo-name/commits/f9cbbe01c....
+    22:59 < GitLabBot> reponame | by Aleks | Got shit done | http://yourgitlabhost.com/repo-name/commits/f9cbbe01c....
 
 ### Install Sinatra
 
