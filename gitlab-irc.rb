@@ -22,7 +22,7 @@ post '/commit' do
 #    socket.puts "PRIVMSG #{IRC_CHANNEL} :New Commits for '" + json['repository']['name'] + "'"
 
     json['commits'].each do |commit|
-      socket.puts "PRIVMSG #{IRC_CHANNEL} :\x039" + json['repository']['name'] + "\x03 | by #{commit['author']['name']} | #{commit['message']} | #{commit['url']}"
+      socket.puts "PRIVMSG #{IRC_CHANNEL} :\x039" + json['repository']['name'] + "\x03 | branch: " + json['ref'] + " | by: #{commit['author']['name']} | #{commit['message']} | #{commit['url']}"
     end
 
     puts socket.gets
